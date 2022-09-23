@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {useTypewriter,Cursor} from 'react-simple-typewriter'
+
 
 function App() {
+
+  const{text}=useTypewriter({
+    words:['Developer','Front End Developer','UI Developer','Vishwas Singh'],
+    loop:{},
+    typeSpeed:120,
+    deleteSpeed:80
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <h1 style={{margin:'50px'}}>
+      I'm  {' '}
+      <span style={{fontweight:'bold',color:'green'}}>
+        {text}
+      </span>
+      <span style={{color:'red'}}>
+      <Cursor/>
+      </span>
+     
+    </h1>
   );
 }
 
